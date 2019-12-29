@@ -23,9 +23,9 @@ class Queue:
 
     def empty(self):
         if self.head is None:
-            return False
-        else:
             return True
+        else:
+            return False
 
     def print_queue(self):
         temp = self.head
