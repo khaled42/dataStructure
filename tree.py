@@ -27,19 +27,34 @@ class BinaryTree:
                     q.put(a.right)
 
 
-    def print_inorder(self):
-        pass
+def print_inorder_rec(t):
+    if t is None:
+        return
+    print_inorder_rec(t.left)
+    print(t.data, end='')
+    print_inorder_rec(t.right)
 
-    def print_preorder(self):
-        pass
+def print_preorder_rec(t):
+    if t is None:
+        return
+    print(t.data, end='')
+    print_preorder_rec(t.left)
+    print_preorder_rec(t.right)
 
-    def print_postorder(self):
-        pass
+def print_postorder_rec(t):
+    if t is None:
+        return
+
+    print_postorder_rec(t.left)
+    print_postorder_rec(t.right)
+    print(t.data, end='')
+
 
 # =========== test ============
-arry = [1, 2, 3, 4, 5, 6, 7]
+arry = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
 bt = BinaryTree()
 for e in arry:
     bt.add(e)
-
-print(bt.root.right.right.data)
+print_inorder_rec(bt.root)
+print_preorder_rec(bt.root)
+print_postorder_rec(bt.root)
